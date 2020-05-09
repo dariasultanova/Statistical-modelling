@@ -90,6 +90,41 @@ def irnlog(q):
     return IR
 
 
+'''----------------------------------------------------------'''
+
+
+def rnuni(a, b):
+    return np.random.rand() * (b - a) + a
+
+
+def rnrm1():
+    u1 = np.random.rand()
+    u2 = np.random.rand()
+    return np.sqrt(-2 * np.log(u2)) * np.cos(2 * np.pi * u1)
+
+
+def rnrm2():
+    return sum(np.random.rand(12)) - 6
+
+
+def rnexp(beta):
+    return -beta * np.log(np.random.rand())
+
+
+def rnchis(N):
+    YN = 0
+    for i in range(N):
+        YN += np.random.normal() ** 2
+    return YN
+
+
+def rnstud(N):
+    return np.random.normal() / np.sqrt(rnchis(N) / N)
+
+
+'''----------------------------------------------------------'''
+
+
 def count_mean(dataset):
     sum = 0
     for i in range(len(dataset)):
